@@ -1,0 +1,31 @@
+@define-mixin clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+@define-mixin section-title {
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 32px;
+}
+@define-mixin title {
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 60px;
+
+	@media (--lap) {
+		font-size: 30px;
+		line-height: 44px;
+	}
+	@media (--palm) {
+		font-size: 22px;
+		line-height: 30px;
+	}
+}
+
+

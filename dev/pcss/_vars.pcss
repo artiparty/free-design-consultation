@@ -1,0 +1,10 @@
+$default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$default-color: #000;
+$red: #ff4324;
+$blue: #0433ff;
+
+@custom-media --palm (width < 480px);
+@custom-media --not-palm (480px <= width);
+@custom-media --lap (480px <= width <= 600px);
+@custom-media --portable (width <= 600px);
+@custom-media --desk (600px < width);
