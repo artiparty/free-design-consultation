@@ -121,12 +121,11 @@ module.exports = function(grunt) {
 			}
 		},
 
-		'ftp-deploy': {
-			all: {
-				auth: grunt.file.exists(process.env.HOME + '/.grunt-ftp-deploy-config') ? grunt.file.readJSON(process.env.HOME + '/.grunt-ftp-deploy-config') : {},
-				src: '<%= project.build %>',
-				dest: '/show/<%= pkg.name %>'
-			}
+		'gh-pages': {
+			options: {
+				base: 'build'
+			},
+			src: '**/*'
 		},
 
 		browserSync: {
@@ -182,18 +181,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['newer:copy', 'postcss:default', 'browserSync', 'watch']);
 	grunt.registerTask('build', ['clean', 'copy', 'postcss:default', 'postcss:minify', 'usebanner']);
-
-	// Deploy
-	grunt.registerTask('deploy', ['ftp-deploy', 'showURL']);
-
-	grunt.registerTask('showURL', 'Show upload folder URL', function() {
-		var url = 'http://hudochenkov.com/show/' + grunt.config('pkg.name') + '/';
-
-		grunt.log.writeln('URL: ' + url);
-
-		// Copy URL to clipboard
-		var proc = require('child_process').spawn('pbcopy');
-		proc.stdin.write(url);
-		proc.stdin.end();
-	});
+	grunt.registerTask('deploy', ['build', 'gh-pages']);
 };
