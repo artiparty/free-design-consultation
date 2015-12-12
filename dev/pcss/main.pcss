@@ -11,20 +11,21 @@ body {
 	background: #fff;
 	color: $default-color;
 	font-size: 16px;
-	line-height: 28px;
 	font-family: $default-font;
+	line-height: 28px;
 }
 a {
 	text-decoration: none;
 
 	&:not([class]) {
 		$opacity: .15;
-		color: $default-color;
+
 		border-bottom: 1px solid rgba($default-color, $opacity);
+		color: $default-color;
 
 		&:hover {
-			color: $red;
 			border-bottom-color: rgba($red, $opacity);
+			color: $red;
 		}
 	}
 }
@@ -52,11 +53,13 @@ a {
 	}
 
 	&__title {
-		margin-bottom: 5px;
 		@mixin section-title;
+
+		margin-bottom: 5px;
 
 		&--big {
 			@mixin title;
+
 			line-height: 52px;
 		}
 	}
@@ -69,7 +72,6 @@ a {
 		margin-top: 50px;
 		margin-bottom: 30px;
 	}
-
 	@media (--palm) {
 		margin-top: 20px;
 		margin-bottom: 20px;
@@ -81,9 +83,10 @@ a {
 	}
 }
 .title {
-	text-align: center;
 	@mixin title;
+
 	margin-bottom: 10px;
+	text-align: center;
 
 	&__subject {
 		color: $red;
@@ -91,8 +94,8 @@ a {
 	}
 }
 .tos {
-	text-align: center;
 	color: #b2b2b2;
+	text-align: center;
 	font-size: 14px;
 	line-height: 24px;
 
@@ -125,23 +128,23 @@ a {
 	}
 }
 .schedule {
-	color: $red;
 	display: block;
 	padding: 15px 18px;
-	text-align: center;
-	border-radius: 3px;
 	border: 2px solid $red;
-	text-decoration: none;
+	border-radius: 3px;
 	background: #fff;
+	color: $red;
+	text-align: center;
+	text-decoration: none;
 
 	&:hover {
 		background: $red;
 		color: #fff;
 	}
 	&__what {
+		margin-bottom: 4px;
 		font-size: 18px;
 		line-height: 24px;
-		margin-bottom: 4px;
 	}
 	&__where {
 		font-size: 14px;
@@ -150,9 +153,11 @@ a {
 }
 .person {
 	padding-left: calc(104 / 600 * 100%);
+
 	@media (--palm) {
 		padding-left: 0;
 	}
+
 	&__image-wrapper {
 		float: left;
 		margin-top: 8px;
@@ -181,20 +186,20 @@ a {
 		margin-bottom: 13px;
 	}
 	&__schedule {
-		color: $blue;
 		display: inline-block;
 		padding: 11px 24px;
 		padding-right: 42px;
-		border-radius: 3px;
 		border: 2px solid $blue;
+		border-radius: 3px;
+		background: #fff inline("img/arrow.svg") right 16px center no-repeat;
+		color: $blue;
 		text-decoration: none;
 		font-size: 16px;
 		line-height: 22px;
-		background: #fff inline("img/arrow.svg") right 16px center no-repeat;
 
 		@media (--palm) {
-			padding-left: 20px;
 			padding-right: 34px;
+			padding-left: 20px;
 			background-position: right 12px center;
 		}
 
@@ -204,9 +209,9 @@ a {
 			color: #fff;
 		}
 		&__what {
+			margin-bottom: 4px;
 			font-size: 18px;
 			line-height: 24px;
-			margin-bottom: 4px;
 		}
 		&__where {
 			font-size: 14px;
@@ -216,31 +221,34 @@ a {
 }
 .footer {
 	@mixin clearfix;
+
 	margin-top: 50px;
 	padding-bottom: 40px;
 
 	&:before {
 		display: block;
 		margin-bottom: 20px;
-		content: "";
 		border-top: 1px solid #ecf0f1;
+		content: "";
 	}
 }
 .built-in {
 	float: left;
+
 	@media (--palm) {
 		float: none;
 		margin-bottom: 15px;
 	}
+
 	&:after {
 		display: inline-block;
-		vertical-align: middle;
 		margin-top: 2px;
 		margin-left: 18px;
 		width: width("img/lion.svg");
 		height: height("img/lion.svg");
 		background: inline("img/lion.svg") 0 0 no-repeat;
 		content: "";
+		vertical-align: middle;
 	}
 }
 .photo-by {
