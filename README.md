@@ -41,7 +41,7 @@ Generate _production_ (minified and optimized) version:
 
 **test** — check JavaScript code style in scripts.js and Gruntfile.js.
 
-**deploy** — upload files to the server.
+**deploy** — build website and upload to the GitHub Pages.
 
 [Grunt]: http://gruntjs.com/
 [PostCSS]: https://github.com/postcss/postcss/
