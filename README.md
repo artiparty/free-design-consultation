@@ -1,6 +1,6 @@
 # How to work
 
-All files for production are compiled with [Grunt]. CSS compiled with [PostCSS]. JavaScript libs and plugins are concatenated to the single file. Images are optimized and SVG compiled to SVG-sprite. HTML just copied.
+All files for production are compiled with [Grunt]. CSS compiled with [PostCSS]. Images and HTML just copied.
 
 ## Setup
 
@@ -25,10 +25,6 @@ All files for production are compiled with [Grunt]. CSS compiled with [PostCSS].
 
 * dev root — HTML.
 * `img` — images.
-	* `img/svg-sprite` — SVGs for SVG-sprite.
-	* `img/temp` — temporary images. They don't go to production and for demonstration purpose only.
-* `js` — JavaScript.
-	* `js/libs` — JavaScript libraries and plugins, that can't be installed via npm.
 * `pcss` — PostCSS files.
 
 ## Generate assets
@@ -44,12 +40,6 @@ Generate _production_ (minified and optimized) version:
 ## Other Grunt-tasks
 
 **test** — check JavaScript code style in scripts.js and Gruntfile.js.
-
-**compress** — make .zip:
-
-* **all** — sources and compiled files.
-* **markup** — only compiled
-* **source** — only sources
 
 **deploy** — upload files to the server.
 
