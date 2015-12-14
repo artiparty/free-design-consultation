@@ -118,6 +118,16 @@ module.exports = function(grunt) {
 						dest: '<%= project.build %>'
 					}
 				]
+			},
+			cname: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= project.src %>',
+						src: ['CNAME'],
+						dest: '<%= project.build %>'
+					}
+				]
 			}
 		},
 
