@@ -119,12 +119,12 @@ module.exports = function(grunt) {
 					}
 				]
 			},
-			cname: {
+			other: {
 				files: [
 					{
 						expand: true,
 						cwd: '<%= project.src %>',
-						src: ['CNAME'],
+						src: ['CNAME', 'favicon.ico'],
 						dest: '<%= project.build %>'
 					}
 				]
