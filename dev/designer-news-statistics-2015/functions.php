@@ -1,24 +1,5 @@
 <?php
 
-global $cache;
-$cache = file("urlcache.txt");
-
-function get_url ($url, $cache) {
-
-	foreach ($cache as $i => $row) {
-
-		$urldata = explode(";", $row);
-
-		if ($urldata[0] == $url) {
-			return $urldata[1];
-		}
-
-	}
-
-	return $url;
-
-}
-
 function get_data ($file) {
 	$data = file("data/".$file.".csv");
 
@@ -34,8 +15,6 @@ function get_data ($file) {
 
 function show_top_posts ($file) {
 
-	global $cache;
-
 	$data_array = get_data($file);
 
 	$data_count = count($data_array);
@@ -49,8 +28,6 @@ function show_top_posts ($file) {
 			$post_number = $post[1];
 			$post_url = $post[2];
 			$post_source = $post[3];
-
-			$post_url = get_url($post_url, $cache);
 
 			if ($i == 0) {
 				$output = '<ul class="items-list">';
@@ -85,8 +62,6 @@ function show_top_posts ($file) {
 
 function show_source_posts ($file) {
 
-	global $cache;
-
 	$data_array = get_data($file);
 
 	$data_count = count($data_array);
@@ -99,8 +74,6 @@ function show_source_posts ($file) {
 			$post_title = $post[0];
 			$post_number = $post[1];
 			$post_url = $post[2];
-
-			$post_url = get_url($post_url, $cache);
 
 			if ($i == 0) {
 				$output = '<ul class="items-list">';
