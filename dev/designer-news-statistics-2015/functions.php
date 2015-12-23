@@ -24,7 +24,7 @@ function show_top_posts ($file) {
 	foreach ($data_array as $i => $post) {
 
 		if ($i < 50) {
-			$post_title = $post[0];
+			$post_title = preg_replace("/ \([\w-]+\.[\.\w+]+\)/", "", $post[0]); // remove (url)
 			$post_number = $post[1];
 			$post_url = $post[2];
 			$post_source = $post[3];
@@ -40,7 +40,7 @@ function show_top_posts ($file) {
 			$output .= '	<li class="items-list__item item"><span class="item__number">'.$post_number.'</span><a href="'.$post_url.'" class="item__link" target="_blank"><span class="item__title">'.$post_title.'</span>';
 
 			if ($post_source) {
-				$output .= '&nbsp;<span class="item__info">('.$post_source.')</span>';
+				$output .= '&nbsp;<span class="item__info">'.$post_source.'</span>';
 			}
 
 			$output .= '</a></li>';
@@ -71,7 +71,7 @@ function show_source_posts ($file) {
 	foreach ($data_array as $i => $post) {
 
 		if ($i < 30) {
-			$post_title = $post[0];
+			$post_title = preg_replace("/ \([\w-]+\.[\.\w+]+\)/", "", $post[0]); // remove (url)
 			$post_number = $post[1];
 			$post_url = $post[2];
 
