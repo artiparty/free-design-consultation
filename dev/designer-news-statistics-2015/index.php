@@ -30,7 +30,7 @@ include('functions.php');
 		<p class="text">
 			<a href="https://www.designernews.co">Designer News</a> is my main source of professional news and my favourite community. My <a href="http://dashinsky.com/designer-news-statistics/">statistics for DN</a> got lots of love so I decided to make a short report about what and who was hot on DN in 2015.
 			<br>
-			Thanks for being part of DN!
+			Thanks for being a part of Designer News!
 		</p><!-- .text -->
 
 	</header><!-- .header -->
