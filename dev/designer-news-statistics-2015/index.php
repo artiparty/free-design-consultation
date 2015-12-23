@@ -199,8 +199,6 @@ include('functions.php');
 			</div>
 		</section>
 
-		<section class="section">
-
 	</div><!-- .main -->
 
 	<footer class="footer">
