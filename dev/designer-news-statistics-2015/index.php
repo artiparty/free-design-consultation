@@ -176,8 +176,6 @@ include('functions.php');
 						<li class="tabs__label is-current">karma</li>
 						<li class="tabs__label">comments</li>
 						<li class="tabs__label">stories</li>
-						<li class="tabs__label">karma/posts ratio</li>
-						<li class="tabs__label">invited users</li>
 					</ul>
 
 					<div class="tabs__container">
