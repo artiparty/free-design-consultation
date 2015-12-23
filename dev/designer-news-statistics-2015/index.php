@@ -133,8 +133,6 @@ include('functions.php');
 						<li class="tabs__label">Github</li>
 						<li class="tabs__label">dribbble</li>
 						<li class="tabs__label">twitter</li>
-						<li class="tabs__label">kickstarter</li>
-						<li class="tabs__label">quora</li>
 					</ul>
 
 					<div class="tabs__container">
@@ -148,8 +146,6 @@ include('functions.php');
 								"source-github",
 								"source-dribbble",
 								"source-twitter",
-								"source-kickstarter",
-								"source-quora",
 							);
 
 						?>
@@ -186,8 +182,6 @@ include('functions.php');
 								"users-karma",
 								"users-comments",
 								"users-posts",
-								"users-ratio",
-								"users-invited",
 							);
 
 						?>
@@ -206,140 +200,6 @@ include('functions.php');
 		</section>
 
 		<section class="section">
-			<h2 class="section__title"><span class="section__title-inner">Top Companies</span></h2>
-
-			<div class="section__content">
-				<div class="tabs">
-					<ul class="tabs__labels">
-						<li class="tabs__label is-current">People</li>
-						<li class="tabs__label">Posts</li>
-					</ul>
-
-					<div class="tabs__container">
-
-						<?php
-
-							$tabs = array(
-								"companies-people",
-								"companies-posts",
-							);
-
-						?>
-
-						<?php foreach ($tabs as $tab => $tabname):?>
-							<div class="tabs__tab<?php if ($tab == 0) echo ' is-visible'; ?>">
-
-								<?php show_companies($tabname) ; ?>
-
-							</div>
-						<?php endforeach; ?>
-
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="section">
-			<h2 class="section__title"><span class="section__title-inner">Top Job Title Keywords</span></h2>
-
-			<div class="section__content">
-				<ul class="items-list">
-					<li class="items-list__item item">
-						<span class="item__number">2418</span>
-
-						<span class="item__title item__title--job">Design</span>
-
-						<span class="item__bar is-hidden" style="width: 2418px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">553</span>
-
-						<span class="item__title item__title--job">Developer</span>
-
-						<span class="item__bar is-hidden" style="width: 553px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">393</span>
-
-						<span class="item__title item__title--job">UX</span>
-
-						<span class="item__bar is-hidden" style="width: 393px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">349</span>
-
-						<span class="item__title item__title--job">Product</span>
-
-						<span class="item__bar is-hidden" style="width: 349px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">327</span>
-
-						<span class="item__title item__title--job">UI</span>
-
-						<span class="item__bar is-hidden" style="width: 327px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">310</span>
-
-						<span class="item__title item__title--job">Director</span>
-
-						<span class="item__bar is-hidden" style="width: 310px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">303</span>
-
-						<span class="item__title item__title--job">Founder</span>
-
-						<span class="item__bar is-hidden" style="width: 303px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">189</span>
-
-						<span class="item__title item__title--job">Creative</span>
-
-						<span class="item__bar is-hidden" style="width: 189px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">184</span>
-
-						<span class="item__title item__title--job">Art</span>
-
-						<span class="item__bar is-hidden" style="width: 184px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">131</span>
-
-						<span class="item__title item__title--job">Graphic</span>
-
-						<span class="item__bar is-hidden" style="width: 131px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">128</span>
-
-						<span class="item__title item__title--job">Engineer</span>
-
-						<span class="item__bar is-hidden" style="width: 128px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">94</span>
-
-						<span class="item__title item__title--job">Manager</span>
-
-						<span class="item__bar is-hidden" style="width: 94px;"></span>
-					</li>
-					<li class="items-list__item item">
-						<span class="item__number">58</span>
-
-						<span class="item__title item__title--job">CEO</span>
-
-						<span class="item__bar is-hidden" style="width: 58px;"></span>
-					</li>
-				</ul>
-
-				<p class="text text--smaller text--jobs-note">* amount of people of 6,850 users</p>
-			</div>
-		</section>
 
 	</div><!-- .main -->
 
