@@ -14,21 +14,7 @@ $(document).ready(function(){
 						.fadeOut(200);
 	});
 
-	// Set gap for long bars
-
-	$('.item__bar').each(function() {
-		var t = $(this);
-		var width = t.attr('style');
-		var maxWidth = parseInt(t.css('max-width'));
-		width = parseInt(width.split(':')[1]);
-
-		if (width > maxWidth) {
-			t.addClass('item__bar--long');
-		}
-	});
-
 	// Running numbers
-
 	var counted = false;
 	var overviewPlacement = $('.overview__count').offset().top;
 
@@ -60,24 +46,10 @@ $(document).ready(function(){
 
 	startCounting();
 
-	// Animated bars
-
-	var barsGrowed = false;
-	var barsPlacement = $('.item__bar').offset().top;
-
 	$(window).scroll(function() {
 		if (!counted) {
 			startCounting();
 		}
-
-		if (!barsGrowed) {
-			if (($(window).scrollTop() + $(window).height() > barsPlacement)) {
-				$('.item__bar').removeClass('is-hidden');
-
-				barsGrowed = true;
-			}
-		}
-
 	});
 
 	// Show more
