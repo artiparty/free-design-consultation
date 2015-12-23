@@ -28,9 +28,9 @@ include('functions.php');
 		<h1 class="site-title">Designer News Statistics of 2015</h1><!-- .site-title -->
 
 		<p class="text">
-			I love <a href="https://news.layervault.com/">Designer News</a>. It became my main source of information about design. <a href="https://layervault.com/">LayerVault</a> created a great community of designers and people who value design.<br>
-			I collected some data from DN and organized it.<br>
-			Enjoy.
+			<a href="https://www.designernews.co">Designer News</a> is my main source of professional news and my favourite community. My <a href="http://dashinsky.com/designer-news-statistics/">statistics for DN</a> got lots of love so I decided to make a short report about what and who was hot on DN in 2015.
+			<br>
+			Thanks for being a part of Designer News!
 		</p><!-- .text -->
 
 	</header><!-- .header -->
@@ -225,7 +225,7 @@ include('functions.php');
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-6464246-4', 'dashinsky.com');
+  ga('create', 'UA-6464246-10', 'auto');
   ga('send', 'pageview');
 
 </script>
