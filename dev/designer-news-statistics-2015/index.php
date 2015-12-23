@@ -8,9 +8,6 @@
 
 	<link rel="stylesheet" href="main.css">
 
-	<script src="//use.typekit.net/dco3lkt.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
-
 </head>
 <body>
 
