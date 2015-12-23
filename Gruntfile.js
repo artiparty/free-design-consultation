@@ -71,6 +71,37 @@ module.exports = function(grunt) {
 					]
 				},
 				src: '<%= project.css.build %>'
+			},
+			autoprefixer: {
+				options: {
+					map: false,
+					processors: [
+						require('autoprefixer')({
+							browsers: ['last 2 versions', '> 1%', 'Android >= 4', 'iOS >= 8']
+						})
+					]
+				},
+				src: '<%= project.build %>/designer-news-statistics-2015/main.css'
+			}
+		},
+
+		sass: {
+			options: {
+				sourceMap: false,
+				outputStyle: 'expanded'
+			},
+			dev: {
+				files: {
+					'<%= project.build %>/designer-news-statistics-2015/main.css': '<%= project.src %>/designer-news-statistics-2015/scss/main.scss'
+				}
+			},
+			dist: {
+				files: {
+					'<%= project.build %>/designer-news-statistics-2015/main.css': '<%= project.src %>/designer-news-statistics-2015/scss/main.scss'
+				},
+				options: {
+					outputStyle: 'compressed'
+				}
 			}
 		},
 
@@ -84,7 +115,7 @@ module.exports = function(grunt) {
 							'-----------------------------------------------------------------------------*/\n'
 				},
 				files: {
-					src: ['<%= project.css.build %>']
+					src: ['<%= project.css.build %>', '<%= project.build %>/designer-news-statistics-2015/main.css']
 				}
 			}
 		},
@@ -128,6 +159,16 @@ module.exports = function(grunt) {
 						dest: '<%= project.build %>'
 					}
 				]
+			},
+			dnstat: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= project.src %>/designer-news-statistics-2015',
+						src: ['img/*.*', 'js/*.*'],
+						dest: '<%= project.build %>/designer-news-statistics-2015'
+					}
+				]
 			}
 		},
 
@@ -136,6 +177,27 @@ module.exports = function(grunt) {
 				base: 'build'
 			},
 			src: '**/*'
+		},
+
+		php: {
+			dist: {
+				options: {
+					hostname: '127.0.0.1',
+					port: 9000,
+					base: '<%= project.src %>/designer-news-statistics-2015',
+					keepalive: true,
+					open: true
+				}
+			}
+		},
+
+		shell: {
+			options: {
+				stderr: false
+			},
+			php: {
+				command: 'cd <%= project.src %>/designer-news-statistics-2015 && php -f index.php > ../../<%= project.build %>/designer-news-statistics-2015/index.html'
+			}
 		},
 
 		browserSync: {
@@ -181,6 +243,14 @@ module.exports = function(grunt) {
 				files: ['<%= project.src %>/*.html'],
 				tasks: ['newer:copy:html']
 			},
+			sass: {
+				files: ['<%= project.src %>/designer-news-statistics-2015/scss/*.scss'],
+				tasks: ['sass:dev', 'postcss:autoprefixer', 'bsReload:all'],
+			},
+			php: {
+				files: ['<%= project.src %>/designer-news-statistics-2015/**/*.{php,csv}'],
+				tasks: ['shell', 'bsReload:all'],
+			},
 		}
 
 	});
@@ -189,7 +259,7 @@ module.exports = function(grunt) {
 		usebanner: 'grunt-banner'
 	});
 
-	grunt.registerTask('default', ['newer:copy', 'postcss:default', 'browserSync', 'watch']);
-	grunt.registerTask('build', ['clean', 'copy', 'postcss:default', 'postcss:minify', 'usebanner']);
+	grunt.registerTask('default', ['newer:copy', 'postcss:default', 'sass:dev', 'postcss:autoprefixer', 'shell', 'browserSync', 'watch']);
+	grunt.registerTask('build', ['clean', 'copy', 'postcss:default', 'postcss:minify', 'sass:dist', 'postcss:autoprefixer', 'shell', 'usebanner']);
 	grunt.registerTask('deploy', ['build', 'gh-pages']);
 };

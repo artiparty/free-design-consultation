@@ -1,0 +1,486 @@
+@import "reset";
+@import "mixins";
+
+/* Initial
+-----------------------------------------------------------------------------*/
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+body {
+	background: #1461b9;
+	color: #fff;
+	font-weight: 300;
+	font-size: 20px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	line-height: 30px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+a {
+	transition: opacity .1s linear, border-color .1s linear, box-shadow .1s linear, color .1s linear;
+
+	&,
+	&:active {
+		color: #fff;
+		text-decoration: none;
+
+		.text & {
+			text-decoration: underline;
+		}
+	}
+	&:hover {
+		color: #aec2da;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+
+}
+img {
+	vertical-align: top;
+}
+strong, b {
+	font-weight: bold;
+}
+em, i {
+	font-style: italic;
+}
+
+/* Common
+-----------------------------------------------------------------------------*/
+
+.wrapper {
+	margin: auto;
+	width: 940px;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+
+.header {
+	text-align: center;
+	padding-top: 135px;
+	margin-bottom: 150px;
+}
+.logo {
+	margin-bottom: 97px;
+
+	&__inner {
+		$width: 169px;
+		$height: 129px;
+
+		display: inline-block;
+		width: $width;
+		height: $height;
+		vertical-align: top;
+
+		@include retina {
+			background: url("img/logo@2x.png") 0 0 no-repeat;
+			background-size: $width $height;
+		}
+	}
+
+	&__image {
+		@include retina {
+			display: none;
+		}
+	}
+}
+.updated {
+	opacity: .5;
+	font-size: 14px;
+	line-height: 1;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom: 45px;
+}
+.site-title {
+	font-size: 60px;
+	line-height: 1;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+.text {
+	text-align: center;
+	margin-bottom: 20px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&--smaller {
+		font-size: 18px;
+		line-height: 28px;
+	}
+	&--jobs-note {
+		padding-left: 80px;
+		text-align: left;
+	}
+}
+
+/* Main
+-----------------------------------------------------------------------------*/
+
+.main {
+}
+.section {
+	margin-bottom: 100px;
+
+	&:last-child {
+		margin-bottom: 60px;
+	}
+
+	&__title {
+		font-size: 36px;
+		line-height: 1;
+		font-weight: 400;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	&__title-inner {
+		position: relative;
+		display: inline-block;
+		padding-bottom: 23px;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: 0;
+			$margin: 15%;
+			left: $margin;
+			right: $margin;
+			height: 4px;
+			background: #2c71d9;
+		}
+	}
+	&__content {
+	}
+}
+.overview {
+	overflow: hidden;
+	text-align: center;
+
+	&__item {
+		float: left;
+		margin-left: 20px;
+		padding-top: 100px;
+		width: 220px;
+		position: relative;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	&__item-icon {
+		display: block;
+		position: absolute;
+		top: 30px;
+		left: 50%;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+
+		&--posts {
+			$width: 50px;
+			$height: 53px;
+
+			margin-left: - floor($width/2);
+			width: $width;
+			height: $height;
+
+			@include at2x("overview__item-icon--posts", $width, $height);
+		}
+		&--comments {
+			$width: 59px;
+			$height: 52px;
+
+			margin-top: 2px;
+			margin-left: - floor($width/2);
+			width: $width;
+			height: $height;
+			@include at2x("overview__item-icon--comments", $width, $height);
+		}
+		&--upvotes {
+			$width: 64px;
+			$height: 64px;
+
+			margin-top: -5px;
+			margin-left: - floor($width/2);
+			width: $width;
+			height: $height;
+			@include at2x("overview__item-icon--upvotes", $width, $height);
+		}
+		&--users {
+			$width: 66px;
+			$height: 56px;
+
+			margin-top: -3px;
+			margin-left: - floor($width/2);
+			width: $width;
+			height: $height;
+			@include at2x("overview__item-icon--users", $width, $height);
+		}
+	}
+	&__count {
+		font-size: 48px;
+		line-height: 60px;
+		margin-bottom: 4px;
+		display: block;
+	}
+	&__name {
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 20px;
+		text-transform: uppercase;
+		display: block;
+		letter-spacing: 2px;
+	}
+}
+.tabs {
+	&__labels {
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	&__label {
+		display: inline-block;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 36px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		padding: 0 18px;
+		opacity: .5;
+		cursor: pointer;
+		margin-left: 3px;
+		vertical-align: middle;
+		border: 1px solid transparent;
+		transition: opacity .1s linear, border-color .1s linear, box-shadow .1s linear;
+
+		&:first-child {
+			margin-left: 0;
+		}
+		&:hover {
+			opacity: 1;
+		}
+		&.is-current {
+			opacity: 1;
+			border-color: rgba(255, 255, 255, .3);
+
+			&:hover {
+				border-color: rgba(255, 255, 255, 1);
+			}
+		}
+		.tabs__labels--with-badges & {
+			opacity: .2;
+
+			&:first-child {
+				padding: 0 9px;
+			}
+			&:hover {
+				opacity: .5;
+			}
+			&.is-current {
+				opacity: 1;
+			}
+		}
+	}
+	&__container {
+	}
+	&__tab {
+		display: none;
+
+		&.is-visible {
+			display: block;
+		}
+	}
+}
+.badge {
+	margin-left: 22px;
+	padding: 0;
+	width: 48px;
+	height: 48px;
+	border: none;
+	border-radius: 50%;
+	background-position: 0 0;
+	background-size: 48px 48px;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+
+	&.is-current {
+		background-color: #fff;
+		box-shadow: 0 0 0 2px #fff;
+	}
+
+	&--apple {
+		background-image: url("img/badge--apple.png");
+	}
+	&--ask-dn {
+		background-image: url("img/badge--ask-dn.png");
+	}
+	&--ask-me-anything {
+		background-image: url("img/badge--ask-me-anything.png");
+	}
+	&--css {
+		background-image: url("img/badge--css.png");
+	}
+	&--discussion {
+		background-image: url("img/badge--discussion.png");
+	}
+	&--sketch {
+		background-image: url("img/badge--sketch.png");
+	}
+	&--show-dn {
+		background-image: url("img/badge--show-dn.png");
+	}
+	&--site-design {
+		background-image: url("img/badge--site-design.png");
+	}
+	&--talk {
+		background-image: url("img/badge--talk.png");
+	}
+	&--typography {
+		background-image: url("img/badge--typography.png");
+	}
+}
+.items-list {
+	margin-bottom: 27px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&.is-hidden {
+		display: none;
+	}
+
+	&__item {
+		margin-bottom: 12px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+.item {
+	$padding: 80px;
+
+	padding-left: $padding;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 30px;
+	overflow: hidden;
+
+	&__number {
+		float: left;
+		box-sizing: border-box;
+		margin-top: 1px;
+		margin-left: -$padding;
+		padding-left: 16px;
+		width: $padding;
+		color: #043771;
+		font-weight: 500;
+		font-size: 18px;
+	}
+	&__link {
+		padding: 3px 0;
+
+		&:visited,
+		&:visited:hover {
+			color: #6297d3;
+		}
+	}
+	&__title {
+		&--job {
+			width: 160px;
+			float: left;
+		}
+	}
+	&__info {
+		color: #88b3e4;
+	}
+	&__bar {
+		float: left;
+		height: 16px;
+		background: #5a92e7;
+		max-width: 700px;
+		margin-top: 7px;
+		transition: width 2s ease-in-out;
+
+		&.is-hidden {
+			width: 0 !important;
+		}
+
+		&--long {
+			@include at2x("item__bar-gap", 27px, 16px);
+			background-position: 580px 0;
+		}
+	}
+}
+.show-more {
+	padding-left: 80px;
+
+	&__button {
+		display: inline-block;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 36px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		padding: 0 21px;
+		border: 1px solid rgba(255, 255, 255, .3);
+
+		&:hover {
+			opacity: 1;
+			border-color: rgba(255, 255, 255, 1);
+		}
+	}
+}
+
+/* Footer
+-----------------------------------------------------------------------------*/
+
+.footer {
+	padding-bottom: 40px;
+}
+.cards {
+	overflow: hidden;
+
+	&__card {
+		float: left;
+
+		&:first-child {
+			margin-right: 20px;
+		}
+	}
+}
+.card {
+	text-align: center;
+	border: 1px solid rgba(255, 255, 255, .3);
+	width: 460px;
+	box-sizing: border-box;
+	padding: 45px 0 42px;
+
+	&:hover {
+		color: #fff;
+		border-color: rgba(255, 255, 255, 1);
+	}
+
+	&__title {
+		font-size: 14px;
+		line-height: 1;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 17px;
+		display: block;
+		letter-spacing: 3px;
+	}
+	&__content {
+		font-size: 40px;
+		line-height: 1;
+		display: block;
+	}
+}
+
