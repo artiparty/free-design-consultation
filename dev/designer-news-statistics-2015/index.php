@@ -341,22 +341,12 @@ include('functions.php');
 			</div>
 		</section>
 
-		<section class="section">
-			<h2 class="section__title"><span class="section__title-inner">How The Data Was Collected</span></h2>
-
-			<div class="section__content">
-				<p class="text">When I came up with this idea I was sure that I have to ask one of my programmers-friends to build a scraper that will collect all this data. But after some research I found a fantastic tool called <a href="https://import.io/">Import.io</a> that helped me to do it by myself without writing a line of code. It allows to collect data from websites and export it as CSV, JSON or HTML.</p>
-
-				<p class="text text--smaller">Disclaimer: I’m not asocciated with <a href="https://import.io/">Import.io</a>, just wanted to thank them for their free tool.</p>
-			</div>
-		</section>
-
 	</div><!-- .main -->
 
 	<footer class="footer">
 
 		<div class="cards">
-			<a href="http://dashinsky.com/" class="cards__card card">
+			<a href="http://design.lc" class="cards__card card">
 				<span class="card__title">Created by</span>
 				<span class="card__content">Artiom Dashinsky</span>
 			</a>
